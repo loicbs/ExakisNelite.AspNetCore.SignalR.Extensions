@@ -8,7 +8,7 @@ namespace ExakisNelite.AspNetCore.SignalR.Extensions
     /// </summary>
     public class ClaimsPrincipalBasedUserIdProvider : DefaultUserIdProvider
     {
-        private readonly Func<ClaimsPrincipal, string?> _userIdAccessor;
+        private readonly Func<ClaimsPrincipal, string?> userIdAccessor;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ClaimsPrincipalBasedUserIdProvider"/> class.
@@ -17,7 +17,7 @@ namespace ExakisNelite.AspNetCore.SignalR.Extensions
         /// <exception cref="ArgumentNullException"><paramref name="userIdAccessor"/> is a null reference.</exception>
         public ClaimsPrincipalBasedUserIdProvider(Func<ClaimsPrincipal, string?> userIdAccessor)
         {
-            _userIdAccessor = userIdAccessor ?? throw new ArgumentNullException(nameof(userIdAccessor));
+            this.userIdAccessor = userIdAccessor ?? throw new ArgumentNullException(nameof(userIdAccessor));
         }
 
         /// <summary>
@@ -25,12 +25,12 @@ namespace ExakisNelite.AspNetCore.SignalR.Extensions
         /// </summary>
         /// <param name="connection">The connection to get the user ID for.</param>
         /// <remarks>
-        /// If the authenticated user does not have userd Id, this method falls back on the <see cref="DefaultUserIdProvider"/>.
+        /// If the authenticated user does not have user Id, this method falls back on the <see cref="DefaultUserIdProvider"/>.
         /// </remarks>
         /// <returns>The user ID for the specified connection.</returns>
         public override string GetUserId(HubConnectionContext connection)
         {
-            return _userIdAccessor(connection.User) ?? base.GetUserId(connection);
+            return userIdAccessor(connection.User) ?? base.GetUserId(connection);
         }
     }
 }

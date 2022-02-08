@@ -6,7 +6,7 @@
     public static class ExtendedClaimTypes
     {
         /// <summary>
-        /// Object idetifier claim type.
+        /// Object identifier claim type.
         /// </summary>
         public const string ObjectIdentifier = "http://schemas.microsoft.com/identity/claims/objectidentifier";
 

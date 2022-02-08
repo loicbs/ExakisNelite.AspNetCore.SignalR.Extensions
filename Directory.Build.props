@@ -1,0 +1,19 @@
+<Project>
+	<PropertyGroup>
+		<Authors>Loïc Blain Sirisakd</Authors>
+		<Company>Exakis Nelite</Company>
+		<LangVersion>latest</LangVersion>
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<Target Name="_EnsureMandatoryPropertiesArePopulated" BeforeTargets="Build">
+		<Error Condition="'$(MSBuildProjectExtension)' == '.csproj' And '$(Description)' == ''" Text=" The Description property must be set on the csproj properties, or on any of the parent Directory.Build.props file."/>
+	</Target>
+
+	<Target Name="_ResolveCopyLocalNuGetPackagePdbsAndXml" Condition="$(CopyLocalLockFileAssemblies) == true and $(UsingMicrosoftNETSdkWeb) == true" AfterTargets="ResolveReferences">
+		<ItemGroup>
+			<ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).xml')" Condition="'%(ReferenceCopyLocalPaths.NuGetPackageId)' != ''&#xD;&#xA; and Exists('%(RootDir)%(Directory)%(Filename).xml')" />
+		</ItemGroup>
+	</Target>
+</Project>

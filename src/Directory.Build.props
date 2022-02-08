@@ -1,0 +1,16 @@
+<Project>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+  
+	<Target Name="CopyEditorConfig" AfterTargets="PrepareForBuild">
+		<Copy Condition=" '$(AnalyzersPackageLocation)' != '' and '$(SolutionDir)' != '' and '$(SolutionDir)' != '*Undefined*' "
+			  SourceFiles="$(AnalyzersPackageLocation)\editorconfig\.editorconfig"
+			  DestinationFolder="$(SolutionDir)" SkipUnchangedFiles="true" ContinueOnError="true" Retries="$(CopyRetryCount)" />
+	</Target>
+</Project>

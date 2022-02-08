@@ -1,0 +1,7 @@
+<Project>
+  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+  <PropertyGroup>
+		<RunSettingsFilePath Condition=" '$(SolutionDir)' != '' and '$(SolutionDir)' != '*Undefined*' ">$(SolutionDir)test\ExakisNelite.AspNetCore.SignalR.runsettings</RunSettingsFilePath>
+	</PropertyGroup>
+</Project>

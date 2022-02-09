@@ -17,7 +17,7 @@ Adds a `IUserIdProvider` that returns the unique identifier of the logged in use
 public void ConfigureServices(IServiceCollection services)
 {
   //...
-  services.AddObjectIdentifierBasedUserIdProvider();
+  services.AddObjectIdentifierBasedUserIdProvider(); 
   //...
 }
 ```

@@ -49,5 +49,9 @@ jobs:
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"loicbs_ExakisNelite.AspNetCore.SignalR.Extensions" /o:"loicbs" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml"
           dotnet restore
           dotnet dotnet build --configuration Release --no-restore
-          dotnet test --no-restore --collect:"XPlat Code Coverage" --results-directory TestResults/ -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+          dotnet test --no-restore `
+            --collect:"XPlat Code Coverage" `
+            --results-directory TestResults/ `
+            --logger "trx;LogFileName=unittests.trx" `
+            -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

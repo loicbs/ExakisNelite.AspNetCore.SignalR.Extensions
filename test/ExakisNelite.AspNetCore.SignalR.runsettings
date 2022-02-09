@@ -46,7 +46,7 @@
       </DataCollector>
       <DataCollector friendlyName="XPlat code coverage">
         <Configuration>
-          <Format>opencover</Format>
+          <Format>json,cobertura,lcov,teamcity,opencover</Format>
           <ExcludeByAttribute>Obsolete,GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
           <SingleHit>false</SingleHit>
           <UseSourceLink>true</UseSourceLink>

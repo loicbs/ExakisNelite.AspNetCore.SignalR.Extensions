@@ -4,15 +4,12 @@
     <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageTags>aspnetcore;signalr;exakisnelite</PackageTags>
-    <Copyright>Copyright (c) Exakis Nelite 2022</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
     <PackageProjectUrl>https://github.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions/main/images/logo.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryType>git</RepositoryType>
+    <PackageTags>aspnetcore;signalr;exakisnelite</PackageTags>
     <RepositoryUrl>https://github.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions.git</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>

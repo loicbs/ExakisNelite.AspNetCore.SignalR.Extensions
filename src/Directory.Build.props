@@ -2,10 +2,13 @@
 	<Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
 
   <PropertyGroup>
+    <Company>ExakisNelite</Company>
+    <Copyright>Copyright (c) Exakis Nelite 2022</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <DebugType>embedded</DebugType>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
   
 	<Target Name="CopyEditorConfig" AfterTargets="PrepareForBuild">

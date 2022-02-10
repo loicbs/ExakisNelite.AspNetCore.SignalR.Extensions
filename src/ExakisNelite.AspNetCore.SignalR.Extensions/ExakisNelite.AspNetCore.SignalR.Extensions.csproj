@@ -12,8 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="docs\icon.png" Pack="true" PackagePath="\" />
-    <None Include="docs\README.md" Pack="true" PackagePath="\" />
+    <Content Include="docs\icon.png" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="docs\README.md" Pack="true" PackagePath="\">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   
   <ItemGroup>

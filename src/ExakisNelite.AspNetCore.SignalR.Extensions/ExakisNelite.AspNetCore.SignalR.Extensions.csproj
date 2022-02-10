@@ -6,11 +6,20 @@
     <Nullable>enable</Nullable>
     <PackageTags>aspnetcore;signalr;exakisnelite</PackageTags>
     <Copyright>Copyright (c) Exakis Nelite 2022</Copyright>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <PackageProjectUrl>https://github.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions/main/images/logo.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions.git</RepositoryUrl>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="docs\icon.png" Pack="true" PackagePath="\" />
+    <Content Include="docs\LICENSE.md" Pack="true" PackagePath="\" />
+    <Content Include="docs\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="3.1.2">
@@ -18,12 +27,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Update="docs\icon.png" Pack="true" PackagePath="\" />
-    <None Update="docs\LICENSE.md" Pack="true" PackagePath="\" />
-    <None Update="docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

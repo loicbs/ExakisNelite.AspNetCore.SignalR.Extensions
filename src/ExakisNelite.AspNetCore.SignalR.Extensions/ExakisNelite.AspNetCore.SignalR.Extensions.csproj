@@ -7,7 +7,7 @@
     <PackageTags>aspnetcore;signalr;exakisnelite</PackageTags>
     <Copyright>Copyright (c) Exakis Nelite 2022</Copyright>
     <PackageProjectUrl>https://github.com/loicbs/ExakisNelite.AspNetCore.SignalR.Extensions</PackageProjectUrl>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
